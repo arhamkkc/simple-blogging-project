@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    
+    {% if messages %}
+      {% for message in messages %}
+        {{message}}
+      {% endfor %}
+    {% endif %}
+      
+    
+    <h1>welcome {{user.username}}</h1>
+    
+{% else %}
+    <h1>Welcome</h1>
+    <h3>please login to post your blog</h3>
+{% endif %}
+
+    
+{% endblock %}

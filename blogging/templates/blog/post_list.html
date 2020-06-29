@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% block content %}  
+<div class="container">
+    <h1>here are all the titles</h1>
+    
+    {% if user_list %}
+        {% for list in user_list  %}
+        <ul>
+            <li><a href="{% url 'post' id=list.id %}">{{list}}</a></li>
+        </ul>
+        {% endfor %}
+
+    {% else %}
+        <h2>you didnt have psoted yet. Post something to see here</h2>
+    {% endif %}
+        
+   
+</div>
+
+{% endblock%}
+
+

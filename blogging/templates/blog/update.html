@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Update your Post here </h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="title">title</label>
+            <input type="text" name="title" value="{{post.title}}">
+            <br>
+            <label for="text">text</label>
+            <textarea name="text" id="" cols="30" rows="10">{{post.text}}</textarea>
+            <br>
+            <!-- <input type="textarea"  name ='text' value="{{post.text}}"> -->
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</body>
+</html>
